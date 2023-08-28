@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Sobre mi | El Rincon de Isma" description="Sobre Ismael Catalá">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Ismael Catalá"
+				tagline='Desarrollador | Instructor | Creador de contenido'
+				pre='Soy'
+			>
+				<!-- <img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Jeanine White at work with a colleague"
+				/> -->
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Quién soy</h2>
+				<div class="content">
+					<p>
+						Nací hace 35 años en Madrid(España). Estudié Ingenieria de Software y he trabajado para diferentes empresas desde los 17 años además de trabajar como freelance.
+					</p>
+					<p>
+						Siempre me ha gustado la programación y desde muy pequeñito hice mis primeros pasos en BASIC. Ahora, con mis mas de 15 años de experiencia programando, he recorrido varias empresas en las que el core siempre ha sido la programación. Desde Junior developer, pasando por Mid y despues por Senior.
+					</p>
+					<p>
+						En 2021 decidí involucrarme en un nuevo proyecto personal como creador de contenido. Creando de esta manera, El Rincón de Isma, un canal de youtube para intentar transmitir mis conocimientos sobre un tema que me apasiona, la programación.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Educación</h2>
+				<div class="content">
+					<p>Senior Software Developer</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Habilidades</h2>
+				<div class="content">
+					<p>PHP | LARAVEL | NODEJS | NESTJS | SWIFT | PYTHON | AWS </p>
+				</div>
+			</section>
+		</main>
+
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

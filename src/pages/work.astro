@@ -1,17 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
-
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-import ContactCTA from '../components/ContactCTA.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
-import CardVideo from '../components/CardVideo.astro';
-
-const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-);
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import CardVideo from "../components/CardVideo.astro";
 ---
 
 <BaseLayout
@@ -27,11 +17,9 @@ const projects = (await getCollection('work')).sort(
 			/>
 			<div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
 				<div class="-m-1 flex flex-wrap md:-m-2">
-				  <CardVideo
-				  href='Lvm0zk0Ph5s'/>
-				  
+					<CardVideo href="Lvm0zk0Ph5s" />
 				</div>
-			  </div>
+			</div>
 		</main>
 	</div>
 </BaseLayout>
